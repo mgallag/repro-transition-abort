@@ -1,0 +1,9 @@
+{{page-title "Parent"}}
+<p>Parent Transition Count <span data-test-parent-transition-count>{{@model.numTransitions}}</span></p>
+<p>
+  Transition: <LinkTo data-test-transition-linkto @route={{this.nextRouteName}}>via LinkTo</LinkTo>
+  <button data-test-transition-service type="button" {{on "click" (fn this.transitionViaService this.nextRouteName)}}>via Service</button>
+  <button data-test-transition-controller type="button" {{on "click" (fn this.transitionViaController this.nextRouteName)}}>via Controller</button>
+  <button data-test-transition-route type="button" {{on "click" (fn this.transitionViaRoute this.nextRouteName)}}>via Route</button>
+</p>
+{{outlet}}
